@@ -1,4 +1,4 @@
-package com.restful.websevices.RestfulImplementation;
+package com.restful.websevices.RestfulImplementation.main;
 
 public class HelloWorldBean {
 	
