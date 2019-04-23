@@ -29,7 +29,11 @@ public class UserResourceController {
 	
 	@GetMapping("/users/{id}")
 	public User getAllUsers(@PathVariable Integer id){
-		return userService.getUser(id);
+		User user  =  userService.findOne(id);
+		if(user ==null) {
+			throw new UserNotFoundException("id = "+id);
+		}
+		return user;
 		
 	}
 	
