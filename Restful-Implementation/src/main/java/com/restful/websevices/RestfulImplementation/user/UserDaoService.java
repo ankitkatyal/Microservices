@@ -2,6 +2,7 @@ package com.restful.websevices.RestfulImplementation.user;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.stereotype.Component;
@@ -39,6 +40,21 @@ public class UserDaoService {
 				return user;
 			}
 		}
+		return null;
+	}
+	
+	public User deleteById(Integer userId) {
+		Iterator<User> it = userList.iterator();
+		while(it.hasNext()) {
+				User user = it.next();
+				if(user.getId()==userId) {
+					it.remove();
+					return user;
+			}
+			
+			
+		}
+		
 		return null;
 	}
 	
